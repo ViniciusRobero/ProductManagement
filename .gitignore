@@ -1,0 +1,23 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/API/.vs
+/API/.vscode
+/Angular/.vscode
+/Angular/.vs
+/API/tests/ProductsSystem.Application.IntegrationTests/bin/Debug/net6.0
+/API/tests/ProductsSystem.Application.IntegrationTests/obj
+/API/src/.vs
+/API/src/Apps/ProductsSystem.Api/bin/Debug
+/API/src/Apps/ProductsSystem.Api/obj
+/API/src/Common/ProductsSystem.Application/bin/Debug/net6.0
+/API/src/Common/ProductsSystem.Domain/bin/Debug/netstandard2.1
+/API/src/Common/ProductsSystem.Domain/obj
+/API/src/Common/ProductsSystem.Application/obj
+/API/src/Common/ProductsSystem.Infrastructure/bin/Debug/net6.0
+/API/src/Common/ProductsSystem.Infrastructure/obj
+/API/src/Common/ProductsSystem.Infrastructure.Npgsql/obj
+/API/src/Common/ProductsSystem.Infrastructure.Sqlite/obj
+/API/src/Common/ProductsSystem.Infrastructure.SqlServer/bin/Debug/net6.0
+/API/src/Common/ProductsSystem.Infrastructure.SqlServer/obj
