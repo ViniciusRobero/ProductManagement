@@ -16,12 +16,12 @@ namespace ProductsSystem.Application.Products.Commands.Delete
         public int Id { get; set; }
     }
 
-    public class DeleteCandidateCommandHandler : IRequestHandlerWrapper<DeleteProductCommand, ProductDto>
+    public class DeleteProductCommandHandler : IRequestHandlerWrapper<DeleteProductCommand, ProductDto>
     {
         private readonly IApplicationDbContext _context;
         private readonly IMapper _mapper;
 
-        public DeleteCandidateCommandHandler(IApplicationDbContext context, IMapper mapper)
+        public DeleteProductCommandHandler(IApplicationDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

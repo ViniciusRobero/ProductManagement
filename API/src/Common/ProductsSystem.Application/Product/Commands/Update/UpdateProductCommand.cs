@@ -20,16 +20,16 @@ namespace ProductsSystem.Application.Products.Commands.Update
 
         public string Discription { get; set; }
 
-        public decimal Value { get; set; }
+        public double Value { get; set; }
 
     }
 
-    public class UpdateCandidateCommandHandler : IRequestHandlerWrapper<UpdateProductCommand, ProductDto>
+    public class UpdateProductCommandHandler : IRequestHandlerWrapper<UpdateProductCommand, ProductDto>
     {
         private readonly IApplicationDbContext _context;
         private readonly IMapper _mapper;
 
-        public UpdateCandidateCommandHandler(IApplicationDbContext context, IMapper mapper)
+        public UpdateProductCommandHandler(IApplicationDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

@@ -30,7 +30,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Apps\ProductsSystem.Api\ProductsSystem.Api.csproj" />
     <ProjectReference Include="..\..\src\Common\ProductsSystem.Application\ProductsSystem.Application.csproj" />
-    <ProjectReference Include="..\..\src\Common\ProductsSystem.Infrastructure\ProductsSystem.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

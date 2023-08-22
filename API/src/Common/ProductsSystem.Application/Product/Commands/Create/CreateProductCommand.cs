@@ -9,14 +9,14 @@ using MapsterMapper;
 
 namespace ProductsSystem.Application.Products.Commands.Create
 {
-    public record CreateProductCommand(string Brand, string ProductCode, string Discription, decimal Value) : IRequestWrapper<ProductDto>;
+    public record CreateProductCommand(string Brand, string ProductCode, string Discription, double Value) : IRequestWrapper<ProductDto>;
 
-    public class CreateCandidateCommandHandler : IRequestHandlerWrapper<CreateProductCommand, ProductDto>
+    public class CreateProductCommandHandler : IRequestHandlerWrapper<CreateProductCommand, ProductDto>
     {
         private readonly IApplicationDbContext _context;
         private readonly IMapper _mapper;
 
-        public CreateCandidateCommandHandler(IApplicationDbContext context, IMapper mapper)
+        public CreateProductCommandHandler(IApplicationDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

@@ -25,9 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{EDD10C
 	ProjectSection(SolutionItems) = preProject
 		.dockerignore = .dockerignore
 		docker-compose.yml = docker-compose.yml
+		init.sql = init.sql
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsSystem.Infrastructure.SqlServer", "src\Common\ProductsSystem.Infrastructure.SqlServer\ProductsSystem.Infrastructure.SqlServer.csproj", "{A84CD2EC-9BFA-4E45-848A-82CAC7DDC5A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,10 +54,6 @@ Global
 		{C50A1D83-C039-4420-9AFE-C497C07E01D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C50A1D83-C039-4420-9AFE-C497C07E01D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C50A1D83-C039-4420-9AFE-C497C07E01D2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A84CD2EC-9BFA-4E45-848A-82CAC7DDC5A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A84CD2EC-9BFA-4E45-848A-82CAC7DDC5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A84CD2EC-9BFA-4E45-848A-82CAC7DDC5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A84CD2EC-9BFA-4E45-848A-82CAC7DDC5A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,7 +66,6 @@ Global
 		{FB27BD16-7EF8-4FED-B822-177438585578} = {27A946BF-09D5-4B8D-B71F-BE4E6FCEACF0}
 		{A8D18FE5-1BD1-47D7-B1CC-A388AC959ADF} = {D638410D-08F3-4042-85CD-1A12F58C06D8}
 		{C50A1D83-C039-4420-9AFE-C497C07E01D2} = {F8A7E80E-BA7E-40A5-A950-D63ABA0EC731}
-		{A84CD2EC-9BFA-4E45-848A-82CAC7DDC5A0} = {27A946BF-09D5-4B8D-B71F-BE4E6FCEACF0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35E1D188-84DC-4673-B815-9E76A22A070C}

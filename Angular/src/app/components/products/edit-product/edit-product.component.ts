@@ -33,10 +33,10 @@ export class EditProductComponent implements OnInit {
         var resultData = data.body.data;
         if (resultData) {
           this.EditProductForm.Id = resultData.id;
-          this.EditProductForm.FirstName = resultData.firstName;
-          this.EditProductForm.LastName = resultData.lastName;
-          this.EditProductForm.Email = resultData.email;
-          this.EditProductForm.Curriculum = resultData.curriculum;
+          this.EditProductForm.Brand = resultData.brand;
+          this.EditProductForm.ProductCode = resultData.productCode;
+          this.EditProductForm.Description = resultData.description;
+          this.EditProductForm.Value = resultData.value;
         }
       }
     },
@@ -69,8 +69,8 @@ export class EditProductComponent implements OnInit {
 
 export class productForm {
   Id: number = 0;
-  FirstName: string = "";
-  LastName: string = "";
-  Email: string = "";
-  Curriculum: string = "";
+  Brand: string = "";
+  ProductCode: string = "";
+  Description: string = "";
+  Value: number = 0;
 }

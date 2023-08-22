@@ -10,7 +10,7 @@
 
         public string Discription { get; set; }
 
-        public decimal Value { get; set; }
+        public double Value { get; set; }
 
     }
 }

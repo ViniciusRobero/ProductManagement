@@ -10,12 +10,12 @@
 
 //namespace ATSSystem.Application.IntegrationTests.Products.Commands
 //{
-//    public class CreateCandidateTests : TestBase
+//    public class CreateProductTests : TestBase
 //    {
 //        [Test]
 //        public void ShouldRequireMinimumFields()
 //        {
-//            var command = new CreateCandidateCommand("Norman", "343434343", DateTime.Now, "Teste", "Senior", "Developer");
+//            var command = new CreateProductCommand("Norman", "343434343", DateTime.Now, "Teste", "Senior", "Developer");
 
 //            FluentActions.Invoking(() =>
 //                SendAsync(command)).Should().ThrowAsync<ValidationException>();
@@ -26,23 +26,23 @@
 //        public async Task ShouldRequireUniqueName()
 //        {
             
-//            await SendAsync(new CreateCandidateCommand("Norman123", "23123123", DateTime.Now, "Teste2", "Senior", "Developer"));
+//            await SendAsync(new CreateProductCommand("Norman123", "23123123", DateTime.Now, "Teste2", "Senior", "Developer"));
 
-//            var command = new CreateCandidateCommand("Norman2", "123213214424", DateTime.Now, "Teste2", "Junior", "Developer");
+//            var command = new CreateProductCommand("Norman2", "123213214424", DateTime.Now, "Teste2", "Junior", "Developer");
 
 //            await FluentActions.Invoking(() =>
 //                SendAsync(command)).Should().ThrowAsync<ValidationException>();
 //        }
 
 //        [Test]
-//        public async Task ShouldCreateCandidate()
+//        public async Task ShouldCreateProduct()
 //        {
 
-//            var command = new CreateCandidateCommand("Geremias", "343434343", DateTime.Now, "Teste", "Senior", "Developer");
+//            var command = new CreateProductCommand("Geremias", "343434343", DateTime.Now, "Teste", "Senior", "Developer");
 
 //            var result = await SendAsync(command);
 
-//            var list = await FindAsync<Candidate>(result.Data.Id);
+//            var list = await FindAsync<Product>(result.Data.Id);
 
 //            list.Should().NotBeNull();
 //            list.Name.Should().Be(command.Name);

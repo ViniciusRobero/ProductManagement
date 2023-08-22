@@ -36,20 +36,20 @@ const MODALS: { [name: string]: Type<any> } = {
 })
 export class ListProductComponent implements OnInit {
   closeResult = '';
-  candidateList: any = [];
+  productLIst: any = [];
   constructor(private router: Router, private modalService: NgbModal,
     private toastr: ToastrService, private httpProvider : HttpProviderService) { }
 
   ngOnInit(): void {
-    this.getAllCandidate();
+    this.getAllProducts();
   }
 
-  async getAllCandidate() {
+  async getAllProducts() {
     this.httpProvider.getAllProducts().subscribe((result : any) => {
       if (result != null && result.body != null) {
         var resultData = result.body.data;
         if (resultData) {
-          this.candidateList = resultData;
+          this.productLIst = resultData;
         }
       }
     },
@@ -57,34 +57,34 @@ export class ListProductComponent implements OnInit {
         if (error) {
           if (error.status == 404) {
             if(error.error && error.error.message){
-              this.candidateList = [];
+              this.productLIst = [];
             }
           }
         }
       });
   }
 
-  AddCandidate() {
+  AddProduct() {
     this.router.navigate(['AddCandidate']);
   }
 
-  deleteCandidateConfirmation(candidate: any) {
+  deleteProductConfirmation(candidate: any) {
     this.modalService.open(MODALS['deleteModal'],
       {
         ariaLabelledBy: 'modal-basic-title'
       }).result.then((result) => {
-        this.deleteCandidate(candidate);
+        this.deleteProduct(candidate);
       },
         (reason) => {});
   }
 
-  deleteCandidate(candidate: any) {
+  deleteProduct(candidate: any) {
     this.httpProvider.deleteProductById(candidate.id).subscribe((data : any) => {
       if (data != null && data.body != null) {
         var resultData = data.body;
         if (resultData != null && resultData.isSuccess) {
           this.toastr.success(resultData.message);
-          this.getAllCandidate();
+          this.getAllProducts();
         }
       }
     },
