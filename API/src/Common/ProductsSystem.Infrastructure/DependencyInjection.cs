@@ -12,7 +12,7 @@ namespace ProductsSystem.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)//, IWebHostEnvironment environment)
         {
             var provider = configuration.GetValue("DbProvider", "SqlServer");
-            var migrationAssembly = $"ProductsSystem.Infrastructure.{provider}";
+            var migrationAssembly = $"ProductsSystem.Api";
             services.AddDbContext<ApplicationDbContext>(options => _ = provider switch
             {
                 "SqlServer" => options.UseSqlServer(

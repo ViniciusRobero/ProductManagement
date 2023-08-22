@@ -22,7 +22,7 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  AddCandidate(isValid: any) {
+  AddProduct(isValid: any) {
     this.isSubmitted = true;
     if (isValid) {
       this.httpProvider.saveProduct(this.addProductForm).subscribe(async data => {
@@ -50,8 +50,8 @@ export class AddProductComponent implements OnInit {
 }
 
 export class productForm {
-  FirstName: string = "";
-  LastName: string = "";
-  Email:string = "";
-  Curriculum: string ="";
+  Brand: string = "";
+  ProductCode: string = "";
+  Description: string = "";
+  Value: number = 0;
 }

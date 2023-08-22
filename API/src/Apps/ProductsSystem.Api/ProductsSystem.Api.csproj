@@ -38,7 +38,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Common\ProductsSystem.Application\ProductsSystem.Application.csproj" />
-    <ProjectReference Include="..\..\Common\ProductsSystem.Infrastructure.SqlServer\ProductsSystem.Infrastructure.SqlServer.csproj" />
     <ProjectReference Include="..\..\Common\ProductsSystem.Infrastructure\ProductsSystem.Infrastructure.csproj" />
   </ItemGroup>
 

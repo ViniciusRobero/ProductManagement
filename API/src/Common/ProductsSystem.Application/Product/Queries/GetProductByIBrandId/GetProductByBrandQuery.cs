@@ -28,12 +28,12 @@ namespace ProductsSystem.Application.Products.Queries.GetProductByIBrandId
 
         public async Task<ServiceResult<ProductDto>> Handle(GetProductByBrandQuery request, CancellationToken cancellationToken)
         {
-            var candidate = await _context.Products
+            var product = await _context.Products
                 .Where(x => x.Brand.Contains(request.Brand))
                 .ProjectToType<ProductDto>(_mapper.Config)
                 .FirstOrDefaultAsync(cancellationToken);
 
-            return candidate != null ? ServiceResult.Success(candidate) : ServiceResult.Failed<ProductDto>(ServiceError.NotFound);
+            return product != null ? ServiceResult.Success(product) : ServiceResult.Failed<ProductDto>(ServiceError.NotFound);
         }
     }
 }

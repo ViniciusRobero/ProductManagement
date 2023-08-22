@@ -2,23 +2,33 @@ version: '3.4'
 
 services:
 
-  sqlserverlocal:
-    container_name: "sqlserverlocal"
-    image: "mcr.microsoft.com/mssql/server:2019-latest"
-    ports:
-      - "1433:1433"
-    environment:
-      - "SA_PASSWORD=S3cur3P@ssW0rd!"
-      - "ACCEPT_EULA=Y"
+    sqlserverlocal:
+      container_name: "sqlserverlocal"
+      image: "mcr.microsoft.com/mssql/server:2019-latest"
+      ports:
+        - "1433:1433"
+      environment:
+        - "SA_PASSWORD=S3cur3P@ssW0rd!"
+        - "ACCEPT_EULA=Y"
+      volumes:
+        - ./init.sql:/tmp/init.sql
+      command:
+        - /bin/bash
+        - -c
+        - |
+          /opt/mssql/bin/sqlservr &
+          sleep 30
+          /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'S3cur3P@ssW0rd!' -d master -i /tmp/init.sql
+          tail -f /var/opt/mssql/log/errorlog
 
   #webapi:
   #  image: ${DOCKER_REGISTRY-}webapi
   #  build:
   #    context: .
-  #    dockerfile: src/Apps/ATSSystem.Api/Dockerfile
+  #    dockerfile: src/Apps/ProductsSystem.Api/Dockerfile
   #  ports:
   #    - "5005:80"
 
   #  restart: on-failure
   #  depends_on:
-  #    - sqlserver
+  #    - sqlserverlocal

@@ -19,7 +19,7 @@ namespace ProductsSystem.Api.Controllers
     public class ProductController : BaseApiController
     {
         /// <summary>
-        /// Get all candidates
+        /// Get all products
         /// </summary>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
@@ -31,19 +31,19 @@ namespace ProductsSystem.Api.Controllers
         }
 
         /// <summary>
-        /// Get candidate by brand name
+        /// Get product by brand name
         /// </summary>
         /// <param name="brand"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         [HttpGet("{brand}")]
-        public async Task<ActionResult<ServiceResult<ProductDto>>> GetCandidateById(string brand, CancellationToken cancellationToken)
+        public async Task<ActionResult<ServiceResult<ProductDto>>> GetProductById(string brand, CancellationToken cancellationToken)
         {
             return Ok(await Mediator.Send(new GetProductByBrandQuery { Brand = brand }, cancellationToken));
         }
 
         /// <summary>
-        /// Create candidate
+        /// Create product
         /// </summary>
         /// <param name="command"></param>
         /// <param name="cancellationToken"></param>
@@ -55,7 +55,7 @@ namespace ProductsSystem.Api.Controllers
         }
 
         /// <summary>
-        /// Update candidate
+        /// Update product
         /// </summary>
         /// <param name="command"></param>
         /// <param name="cancellationToken"></param>
@@ -67,7 +67,7 @@ namespace ProductsSystem.Api.Controllers
         }
 
         /// <summary>
-        /// Delete candidate by Id
+        /// Delete product by Id
         /// </summary>
         /// <param name="id"></param>
         /// <param name="cancellationToken"></param>

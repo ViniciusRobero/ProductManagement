@@ -10,29 +10,29 @@
 
 //namespace ATSSystem.Application.IntegrationTests.Products.Commands
 //{
-//    public class DeleteCandidateTests : TestBase
+//    public class DeleteProductTests : TestBase
 //    {
 //        [Test]
-//        public void ShouldRequireValidCandidateId()
+//        public void ShouldRequireValidProductId()
 //        {
-//            var command = new DeleteCandidateCommand { Id = 99 };
+//            var command = new DeleteProductCommand { Id = 99 };
 
 //            FluentActions.Invoking(() =>
 //                SendAsync(command)).Should().ThrowAsync<NotFoundException>();
 //        }
 
 //        [Test]
-//        public async Task ShouldDeleteCandidate()
+//        public async Task ShouldDeleteProduct()
 //        {
 
-//            var candidate = await SendAsync(new CreateCandidateCommand("Jaqueline", "343434343", DateTime.Now, "Teste", "Senior", "Developer"));
+//            var product = await SendAsync(new CreateProductCommand("Jaqueline", "343434343", DateTime.Now, "Teste", "Senior", "Developer"));
 
-//            await SendAsync(new DeleteCandidateCommand
+//            await SendAsync(new DeleteProductCommand
 //            {
-//                Id = candidate.Data.Id
+//                Id = product.Data.Id
 //            });
 
-//            var list = await FindAsync<Candidate>(candidate.Data.Id);
+//            var list = await FindAsync<Product>(product.Data.Id);
 
 //            list.Should().BeNull();
 //        }

@@ -13,7 +13,7 @@
 //        public async Task ShouldReturnAllProducts()
 //        {
 
-//            await AddAsync(new Candidate
+//            await AddAsync(new Product
 //            {
 //                Name = "Manisa",
 //            });

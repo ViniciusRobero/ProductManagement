@@ -11,12 +11,12 @@
 
 //namespace ATSSystem.Application.IntegrationTests.Products.Commands
 //{
-//    public class UpdateCandidateTests : TestBase
+//    public class UpdateProductTests : TestBase
 //    {
 //        [Test]
-//        public void ShouldRequireValidCandidateId()
+//        public void ShouldRequireValidProductId()
 //        {
-//            var command = new UpdateCandidateCommand
+//            var command = new UpdateProductCommand
 //            {
 //                Id = 99,
 //                Name = "Kayseri"
@@ -30,28 +30,28 @@
 //        public async Task ShouldRequireUniqueName()
 //        {
             
-//            var candidate = await SendAsync(new CreateCandidateCommand("Jaqueline", "343434343", DateTime.Now, "Teste", "Senior", "Developer"));
+//            var product = await SendAsync(new CreateProductCommand("Jaqueline", "343434343", DateTime.Now, "Teste", "Senior", "Developer"));
 
-//            await SendAsync(new CreateCandidateCommand("Diniz", "343434343", DateTime.Now, "Teste", "Senior", "Developer"));
+//            await SendAsync(new CreateProductCommand("Diniz", "343434343", DateTime.Now, "Teste", "Senior", "Developer"));
 
-//            var command = new UpdateCandidateCommand
+//            var command = new UpdateProductCommand
 //            {
-//                Id = candidate.Data.Id,
+//                Id = product.Data.Id,
 //                Name = "Denizli"
 //            };
 
 //            FluentActions.Invoking(() =>
 //                    SendAsync(command))
 //                .Should().ThrowAsync<ValidationException>().Where(ex => ex.Errors.ContainsKey("Name")).Result
-//                .And.Errors["Name"].Should().Contain("The specified candidate already exists. If you just want to activate the candidate leave the name field blank!");
+//                .And.Errors["Name"].Should().Contain("The specified product already exists. If you just want to activate the product leave the name field blank!");
 //        }
 
 //        [Test]
-//        public async Task ShouldUpdateCandidate()
+//        public async Task ShouldUpdateProduct()
 //        {
-//            var result = await SendAsync(new CreateCandidateCommand("Norman", "343434343", DateTime.Now, "Teste", "Senior", "Developer"));
+//            var result = await SendAsync(new CreateProductCommand("Norman", "343434343", DateTime.Now, "Teste", "Senior", "Developer"));
 
-//            var command = new UpdateCandidateCommand
+//            var command = new UpdateProductCommand
 //            {
 //                Id = result.Data.Id,
 //                Name = "Jones"
@@ -59,9 +59,9 @@
 
 //            await SendAsync(command);
 
-//            var candidate = await FindAsync<Candidate>(result.Data.Id);
+//            var product = await FindAsync<Product>(result.Data.Id);
 
-//            candidate.Name.Should().Be(command.Name);
+//            product.Name.Should().Be(command.Name);
 //        }
 //    }
 //}
